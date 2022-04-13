@@ -1,7 +1,10 @@
 // Declaro variables iniciables
-let timer = 60; 
+let timerInicial = 5;
+let timer = 5; 
+let resultadoFinalTiempo = timerInicial - timer; 
 let cronometro; 
 let comenzarCronometro = false;
+
 
 let tarjetasDestapadas = 0; 
 let movimientos = 0; 
@@ -13,7 +16,6 @@ let tarjeta2 = null;
 let primerResultado = null;
 let segundoResultado = null; 
 
-let resultadoFinalTiempo; 
 
 // Numeros Aleatorios
 
@@ -38,16 +40,17 @@ function tiempoDeJuego() {
          cronometro =  setInterval(() => {
          timer--
          if (timer == 0) {
-             clearInterval(cronometro);
-             console.log("Tiempo acabado")
+           clearInterval(cronometro);
+           alert(`Tiempo Acabado. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos} || Tiempo:${resultadoFinalTiempo}`)
+           location.reload();
          }
         tiempo.innerHTML = "Tiempo de juego: " + timer;
     },1000)
     }, 3000);
    
 }
+// Cronometro Reset
 
-// Prueba Funcion Cronometro
 
 
 // Funcion PRINCIPAL 
@@ -71,10 +74,11 @@ function contarTarjetas(id) {
     tarjeta2.disabled = true;
 
     // Contar Movimientos 
-    movimientos++
-    nuevosMovimientos.innerText = "Movimientos: " + movimientos
+        movimientos++
+        nuevosMovimientos.innerText = "Movimientos: " + movimientos
         console.log(nuevosMovimientos.textContent)
-        movimientosDom.innerText = "Movimientos: " + "<br/>" + movimientos
+        movimientosDom.innerText = `Movimientos  \n   ${movimientos}`
+    
         
             
         // Volver a 0 tarjetas destapadas si acierta 
@@ -83,11 +87,12 @@ function contarTarjetas(id) {
             tarjetasDestapadas = 0;
              // Aumentar Aciertos 
             aciertos++ 
-            aciertosDom.innerHTML = `Aciertos: ` + aciertos 
-            console.log(`Aciertos: ` + aciertos)
-            if (aciertos == 8) {
-               alert(`Ganaste!`)
-
+            aciertosDom.innerHTML = `Aciertos:  \n  ${aciertos}`
+            console.log(`Aciertos:  \n  ${aciertos}`)
+            if (aciertos == 1) {
+               alert(`Ganaste! Resultado: Movimientos ${movimientos} || Aciertos ${aciertos} || Tiempo:${resultadoFinalTiempo}`)
+          } else if (timer === 0) {
+            alert("perdiste")
             }
 
 

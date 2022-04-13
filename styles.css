@@ -6,6 +6,7 @@ button:hover {
   transition: all 0.3s ease-out;
 } 
 
+
 /* Boton Comenzar  */
 #botonComenzar:hover {
  background-color: black;
@@ -77,7 +78,7 @@ button:hover {
 }
 
 .ml2 .letter {
-  display: inline-block;
+  /* display: inline-block; */
   line-height: 1em;
 }
 
