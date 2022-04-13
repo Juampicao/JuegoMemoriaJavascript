@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Juego de Memoria </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
     <link rel="shortcut icon"
         href="./img/png-transparent-brain-training-brain-games-brain-drain-mind-games-free-brain-games-shapes-memory-game-find-two-of-the-same-brain-text-people-logo-thumbnail.png">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -13,26 +17,62 @@
 </head>
 
 
-<body class="bg-slate-800">
+<body class=" text-white" style="background-color: #0812d8;">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
+    </script>
+
+
 
     <!-- ----------------------------    TIMER   -------------------------------------->
 
     <div class="text-center">
 
         <div class="">
-            <!-- <h1 class='text-white uppercase text-4xl mt-5'> Juego memoria </h1> -->
+            <h1 class='text-white uppercase text-4xl mt-5'> Juego memoria </h1>
 
-            <input type="submit" value="comenzar" onClick="tiempoDeJuego()"
-                class='text-white uppercase text-2xl mt-10 border hover:bg-slate-600 p-5 cursor-pointer ' />
+            <input type="submit" value="comenzar" onClick="tiempoDeJuego()" id="botonComenzar"
+                class='bg-white text-black uppercase text-2xl mt-10 border p-5 cursor-pointer ' />
+            <h1 class="ml4">
+                <span class="letters letters-1">Ready</span>
+                <span class="letters letters-2">Set</span>
+                <span class="letters letters-3">Go!</span>
+            </h1>
+
         </div>
     </div>
+    <!-- PRUEBA  -->
+    <ul>
+        <li>
+            <a href="#">
+                <i class="fab fa-edge"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fab fa-firefox"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fab fa-chrome"></i>
+            </a>
 
+        </li>
+        <li>
+            <a href="#">
+                <i class="fab fa-opera"></i>
+            </a>
+        </li>
+    </ul>
+
+
+    <!-- FIN PRUEBA  -->
     <!-- {/*---------------------------------------------- Estadisticas ----------------------------------------- */} -->
     <div class="py-5 md:my-10 px-10 sm:px-32 md:px-62">
-        <div class="pt-5 flex justify-evenly space-x-8 text-white uppercase text-2xl lg:text-4xl">
-            <h2 id="movimientos "> Movimientos: 0 </h2>
-            <h2 id='tiempo'> Tiempo de juego: 5 </h2>
-            <h2 id="aciertos"> Aciertos: 0 </h2>
+        <div class="pt-16 flex justify-evenly space-x-8 text-white uppercase text-2xl  ">
+            <h2 id="movimientos" class="ml2"> Movimientos: 0 </h2>
+            <h2 id='tiempo' class="ml2"> Tiempo de juego: 60 </h2>
+            <h2 id="aciertos" class="ml2"> Aciertos: 0 </h2>
 
         </div>
         <!-- <h2 class="text-center text-2xl lg:text-4xl text-white uppercase pt-5" id="resultadoFinal"> Resultado Final: </h2> -->
@@ -43,72 +83,73 @@
     <div id="botones"
         class="grid grid-cols-4 my-16 mx-auto gap-x-5 lg:gap-x-10 gap-y-5 lg:gap-y-10 px-10 sm:px-32 md:px-62 lg:px-80 ">
         <button id="0" onclick="contarTarjetas(0)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
         </button>
         <button id="1" onclick="contarTarjetas(1)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48  ov-btn-slide-right'>
 
         </button>
         <button id="2" onclick="contarTarjetas(2)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="3" onclick="contarTarjetas(3)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="4" onclick="contarTarjetas(4)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="5" onclick="contarTarjetas(5)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="6" onclick="contarTarjetas(6)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="7" onclick="contarTarjetas(7)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="8" onclick="contarTarjetas(8)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="9" onclick="contarTarjetas(9)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="10" onclick="contarTarjetas(10)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="11" onclick="contarTarjetas(11)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="12" onclick="contarTarjetas(12)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="13" onclick="contarTarjetas(13)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="14" onclick="contarTarjetas(14)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
         <button id="15" onclick="contarTarjetas(15)"
-            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl bg-slate-600 font-black border-8   hover:bg-slate-700 cursor-pointer sm:h-16 md:h-32 lg:h-48'>
+            class='p-5 sm:p-3 md:p-5 text-xl lg:text-4xl  font-black  cursor-pointer sm:h-16 md:h-32 lg:h-48 ov-btn-slide-right'>
 
         </button>
     </div>
 
 
     <script src="./main.js"> </script>
+
 </body>
 
 </html>

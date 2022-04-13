@@ -1,5 +1,5 @@
 // Declaro variables iniciables
-let timer = 6; 
+let timer = 60; 
 let cronometro; 
 let comenzarCronometro = false;
 
@@ -13,6 +13,7 @@ let tarjeta2 = null;
 let primerResultado = null;
 let segundoResultado = null; 
 
+let resultadoFinalTiempo; 
 
 // Numeros Aleatorios
 
@@ -32,14 +33,18 @@ var nuevosMovimientos = document.createElement(`h2`)
 
 // Cronometro
 function tiempoDeJuego() {
-    cronometro =  setInterval(() => {
+    efectoReady()
+    setTimeout(() => {
+         cronometro =  setInterval(() => {
          timer--
          if (timer == 0) {
              clearInterval(cronometro);
              console.log("Tiempo acabado")
          }
-        tiempo.innerHTML = "¡Empieza! Tiempo restante de juego: " + timer;
+        tiempo.innerHTML = "Tiempo de juego: " + timer;
     },1000)
+    }, 3000);
+   
 }
 
 // Prueba Funcion Cronometro
@@ -51,26 +56,26 @@ function tiempoDeJuego() {
 function contarTarjetas(id) {
     tarjetasDestapadas++
     // console.log(`Los tarjetasDestapadas son: ` + tarjetasDestapadas)
-    if (tarjetasDestapadas == 1) {
-        // Mostrar tarjetas 
-        tarjeta1 = document.getElementById(id);
-        primerResultado = numeros[id]
-        tarjeta1.innerHTML = numeros[id];
-        // Deshabilitar el boton una vez presionado
-        tarjeta1.disabled = true; 
-    } else if (tarjetasDestapadas == 2) {
-        // Mostrar Tarjeta 2 
-        tarjeta2 = document.getElementById(id);
-        segundoResultado = numeros[id]
-        tarjeta2.innerHTML = numeros[id];
-        tarjeta2.disabled = true; 
+  if (tarjetasDestapadas == 1) {
+    // Mostrar tarjetas 
+    tarjeta1 = document.getElementById(id);
+    primerResultado = numeros[id]
+    tarjeta1.innerHTML = numeros[id];
+    // Deshabilitar el boton una vez presionado
+    tarjeta1.disabled = true;
+  } else if (tarjetasDestapadas == 2) {
+    // Mostrar Tarjeta 2 
+    tarjeta2 = document.getElementById(id);
+    segundoResultado = numeros[id]
+    tarjeta2.innerHTML = numeros[id];
+    tarjeta2.disabled = true;
 
-       // Contar Movimientos 
-        movimientos++
-        // movimientosDom.textContent = Ganaste
-        nuevosMovimientos.innerText = "Movimientos: " + movimientos
+    // Contar Movimientos 
+    movimientos++
+    nuevosMovimientos.innerText = "Movimientos: " + movimientos
         console.log(nuevosMovimientos.textContent)
-      
+        movimientosDom.innerText = "Movimientos: " + "<br/>" + movimientos
+        
             
         // Volver a 0 tarjetas destapadas si acierta 
        
@@ -80,8 +85,8 @@ function contarTarjetas(id) {
             aciertos++ 
             aciertosDom.innerHTML = `Aciertos: ` + aciertos 
             console.log(`Aciertos: ` + aciertos)
-            if (aciertos == 1) {
-               alert("ganaste")
+            if (aciertos == 8) {
+               alert(`Ganaste!`)
 
             }
 
@@ -99,4 +104,61 @@ function contarTarjetas(id) {
     }
 }
 
+
+
+// Efectos Css Ready 
+
+function efectoReady() {
+  var ml4 = {};
+  ml4.opacityIn = [0, 1];
+  ml4.scaleIn = [0.2, 1];
+  ml4.scaleOut = 3;
+  ml4.durationIn = 500;
+  ml4.durationOut = 500;
+  ml4.delay = 500;
+
+  anime.timeline({ loop: false })
+    .add({
+      targets: '.ml4 .letters-1',
+      opacity: ml4.opacityIn,
+      scale: ml4.scaleIn,
+      duration: ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-1',
+      opacity: 0,
+      scale: ml4.scaleOut,
+      duration: ml4.durationOut,
+      easing: "easeInExpo",
+      delay: ml4.delay
+    }).add({
+      targets: '.ml4 .letters-2',
+      opacity: ml4.opacityIn,
+      scale: ml4.scaleIn,
+      duration: ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-2',
+      opacity: 0,
+      scale: ml4.scaleOut,
+      duration: ml4.durationOut,
+      easing: "easeInExpo",
+      delay: ml4.delay
+    }).add({
+      targets: '.ml4 .letters-3',
+      opacity: ml4.opacityIn,
+      scale: ml4.scaleIn,
+      duration: ml4.durationIn
+    }).add({
+      targets: '.ml4 .letters-3',
+      opacity: 0,
+      scale: ml4.scaleOut,
+      duration: ml4.durationOut,
+      easing: "easeInExpo",
+      delay: ml4.delay
+    }).add({
+      targets: '.ml4',
+      opacity: 0,
+      duration: 500,
+      delay: 500
+    });
+}
 

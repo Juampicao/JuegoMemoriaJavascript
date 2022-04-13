@@ -1,0 +1,103 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+button:hover {
+  transition: all 0.3s ease-out;
+} 
+
+/* Boton Comenzar  */
+#botonComenzar:hover {
+ background-color: black;
+ color: white;
+}
+
+/* Efecto Boton comenzar  */
+/*** ESTILOS BOTÓN SLIDE RIGHT ***/
+.ov-btn-slide-right {
+  background: #fff; /* color de fondo */
+  color: black; /* color de fuente */
+  border: 2px solid #black; /* tamaño y color de borde */
+  padding: 16px 20px;
+  border-radius: 3px; /* redondear bordes */
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.ov-btn-slide-right:hover {
+  color: #fff; /* color de fuente hover */
+}
+.ov-btn-slide-right::after {
+  content: "";
+  background: black; /* color de fondo hover */
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.ov-btn-slide-right:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+
+/* Efecto Ready  */
+
+.ml4 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.5em;
+}
+.ml4 .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0.3em;
+  right: 0;
+  opacity: 0;
+  text:white; 
+}
+
+
+ /* Efecto Todo  */
+.ml2 {
+  font-weight: 900;
+   /* font-size: 3.5em;  */
+}
+
+.ml2 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+/* // Fadein */
+
+ body  {
+ animation: fadein 2s; 
+}
+@keyframes fadein {
+ 0% {
+ opacity:0;
+ }
+ 25%{
+ opacity:0.33;
+ }
+ 25 {
+ opacity:0.66;
+
+ }
+ 100% {
+ opacity:1;
+ } 
+
