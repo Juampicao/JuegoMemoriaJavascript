@@ -1,6 +1,6 @@
 // Declaro variables iniciables
-let timerInicial = 5;
-let timer = 5; 
+let timerInicial = 60;
+let timer = 60; 
 let resultadoFinalTiempo = timerInicial - timer; 
 let cronometro; 
 let comenzarCronometro = false;
@@ -89,7 +89,7 @@ function contarTarjetas(id) {
             aciertos++ 
             aciertosDom.innerHTML = `Aciertos:  \n  ${aciertos}`
             console.log(`Aciertos:  \n  ${aciertos}`)
-            if (aciertos == 1) {
+            if (aciertos == 8) {
                alert(`Ganaste! Resultado: Movimientos ${movimientos} || Aciertos ${aciertos} || Tiempo:${resultadoFinalTiempo}`)
           } else if (timer === 0) {
             alert("perdiste")
