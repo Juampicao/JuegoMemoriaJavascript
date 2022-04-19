@@ -37,8 +37,8 @@ var nuevosMovimientos = document.createElement(`h2`)
 
 // Cronometro
 function tiempoDeJuego() {
-    desbloquearTarjetas()
     efectoReady()
+    setTimeout(desbloquearTarjetas,3000)
     setTimeout(() => {
          cronometro =  setInterval(() => {
          timer--
@@ -53,7 +53,7 @@ function tiempoDeJuego() {
    
 }
 
-// prueba Bloquear tarjetas hasta que empiece 
+//  Bloquear tarjetas
 function bloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     let tarjetasBloqueadas = document.getElementById(i).disabled = true
@@ -61,6 +61,7 @@ function bloquearTarjetas() {
  }
 }
 
+// Desbloquear Tarjetas 
 function desbloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     let tarjetasBloqueadas = document.getElementById(i).disabled = false
