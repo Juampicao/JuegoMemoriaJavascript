@@ -3,7 +3,8 @@ let timerInicial = 60;
 let timer = 60; 
 let resultadoFinalTiempo = timerInicial - timer; 
 let cronometro; 
-let comenzarCronometro = false;
+
+
 
 
 let tarjetasDestapadas = 0; 
@@ -16,6 +17,7 @@ let tarjeta2 = null;
 let primerResultado = null;
 let segundoResultado = null; 
 
+ 
 
 // Numeros Aleatorios
 
@@ -28,13 +30,14 @@ tiempo = document.getElementById("tiempo")
 movimientosDom = document.getElementById("movimientos")
 aciertosDom = document.getElementById("aciertos")
 resultadoFinalDom = document.getElementById("resultadoFinalDom")
-botones = document.getElementById("botones").onclick
 
 // Crear DIV DOM
 var nuevosMovimientos = document.createElement(`h2`)
 
+
 // Cronometro
 function tiempoDeJuego() {
+    desbloquearTarjetas()
     efectoReady()
     setTimeout(() => {
          cronometro =  setInterval(() => {
@@ -49,7 +52,21 @@ function tiempoDeJuego() {
     }, 3000);
    
 }
-// Cronometro Reset
+
+// prueba Bloquear tarjetas hasta que empiece 
+function bloquearTarjetas() {
+  for (i = 0; i < 15; i++) {
+    let tarjetasBloqueadas = document.getElementById(i).disabled = true
+    console.log(tarjetasBloqueadas)
+ }
+}
+
+function desbloquearTarjetas() {
+  for (i = 0; i < 15; i++) {
+    let tarjetasBloqueadas = document.getElementById(i).disabled = false
+    console.log(tarjetasBloqueadas)
+ }
+}
 
 
 
