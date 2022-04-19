@@ -1,11 +1,6 @@
 // Declaro variables iniciables
-let timerInicial = 45;
 let timer = 45; 
-let resultadoFinalTiempo = timerInicial - timer; 
 let cronometro; 
-
-
-
 
 let tarjetasDestapadas = 0; 
 let movimientos = 0; 
@@ -43,7 +38,7 @@ function tiempoDeJuego() {
          timer--
          if (timer <= -1) {
            clearInterval(cronometro);
-           alert(`Tiempo Acabado. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos} || Tiempo:${resultadoFinalTiempo}`)
+           alert(`Tiempo Acabado. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
            location.reload();
          }
         tiempo.innerHTML = "Tiempo de juego: " + timer;
@@ -63,7 +58,6 @@ function bloquearTarjetas() {
 function desbloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     let tarjetasBloqueadas = document.getElementById(i).disabled = false
-    console.log(tarjetasBloqueadas)
  }
 }
 
@@ -105,8 +99,8 @@ function contarTarjetas(id) {
             aciertos++ 
             aciertosDom.innerHTML = `Aciertos:  ${aciertos}`
             // console.log(`Aciertos:  \n  ${aciertos}`)
-            if (aciertos == 8) {
-               alert(`Ganaste! Resultado: Movimientos ${movimientos} || Aciertos ${aciertos} || Tiempo:${resultadoFinalTiempo}`)
+          if (aciertos == 8) {
+            alert(`Ganaste! Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
           } else if (timer === 0) {
             alert("perdiste")
             }
