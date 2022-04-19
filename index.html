@@ -17,7 +17,7 @@
 </head>
 
 
-<body onload="bloquearTarjetas()" class=" text-white" style="background-color: #0812d8;">
+<body onload="bloquearTarjetas()" class=" text-white  min-h-screen" style="background-color: #0812d8;">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
     </script>
 
@@ -28,10 +28,10 @@
     <div class="text-center">
 
         <div class="">
-            <h1 class='text-white uppercase text-4xl mt-5'> Juego memoria </h1>
+            <h1 class='text-white uppercase text-lg md:text-4xl mt-5'> Juego memoria </h1>
 
             <input type="submit" value="comenzar" onClick="tiempoDeJuego()" id="botonComenzar"
-                class='bg-white text-black uppercase text-2xl mt-10 rounded-xl p-5 cursor-pointer ' />
+                class='bg-white text-black uppercase text-sm p-3 mt-3 md:text-2xl md:mt-10 rounded-xl md:p-5 cursor-pointer ' />
             <h1 class="ml4">
                 <span class="letters letters-1">Ready</span>
                 <span class="letters letters-2">Set</span>
@@ -69,9 +69,9 @@
     <!-- FIN PRUEBA  -->
     <!-- {/*---------------------------------------------- Estadisticas ----------------------------------------- */} -->
     <div class="py-5 md:my-10 px-10 sm:px-32 md:px-62">
-        <div class="pt-16 flex justify-evenly space-x-8 text-white uppercase text-2xl  ">
+        <div class="pt-16 flex justify-evenly space-x-8 text-white uppercase text-sm md:text-2xl  ">
             <h2 id="movimientos" class="ml2"> Movimientos <br> <span class="flex mx-auto"> 0 </span> </h2>
-            <h2 id='tiempo' class="ml2"> Tiempo de juego <br> <span class="flex mx-auto"> 60 </span> </h2>
+            <h2 id='tiempo' class="ml2"> Tiempo de juego <br> <span class="flex mx-auto"> 45 </span> </h2>
             <h2 id="aciertos" class="ml2"> Aciertos <br> <span class="flex mx-auto"> 0 </span> </h2>
 
         </div>
@@ -81,82 +81,82 @@
     <!-- ----------------------------    JUEGO  -------------------------------------->
 
     <div id="botones"
-        class="grid grid-cols-4 my-16 mx-auto gap-x-5 lg:gap-x-10 gap-y-5 lg:gap-y-10 px-5 sm:px-16 md:px-62 lg:px-80 ">
+        class="grid grid-cols-4 my-8  mx-auto gap-x-5 lg:gap-x-10 gap-y-5 lg:gap-y-10 px-5 sm:px-16 md:px-62 lg:px-80 ">
         <button id="0" onclick="contarTarjetas(0)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-sm text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
         </button>
-        <button id="1" onclick="contarTarjetas(1)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
+        <button id="1" onclick="contarTarjetas(1)"
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
         </button>
         <button id="2" onclick="contarTarjetas(2)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="3" onclick="contarTarjetas(3)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="4" onclick="contarTarjetas(4)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="5" onclick="contarTarjetas(5)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="6" onclick="contarTarjetas(6)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="7" onclick="contarTarjetas(7)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="8" onclick="contarTarjetas(8)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="9" onclick="contarTarjetas(9)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="10" onclick="contarTarjetas(10)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="11" onclick="contarTarjetas(11)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="12" onclick="contarTarjetas(12)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="13" onclick="contarTarjetas(13)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="14" onclick="contarTarjetas(14)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>
         <button id="15" onclick="contarTarjetas(15)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer sm:h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
 
 
         </button>

@@ -64,6 +64,12 @@ button:hover {
   font-weight: 900;
   font-size: 3.5em;
 }
+  @media (max-width: 450px) {
+  .ml4 {
+   font-weight: 900;
+   font-size: 2em;
+  }
+}
 .ml4 .letters {
   position: absolute;
   margin: auto;

@@ -1,6 +1,6 @@
 // Declaro variables iniciables
-let timerInicial = 60;
-let timer = 60; 
+let timerInicial = 45;
+let timer = 45; 
 let resultadoFinalTiempo = timerInicial - timer; 
 let cronometro; 
 
@@ -42,7 +42,7 @@ function tiempoDeJuego() {
     setTimeout(() => {
          cronometro =  setInterval(() => {
          timer--
-         if (timer == 0) {
+         if (timer <= -1) {
            clearInterval(cronometro);
            alert(`Tiempo Acabado. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos} || Tiempo:${resultadoFinalTiempo}`)
            location.reload();
@@ -53,7 +53,7 @@ function tiempoDeJuego() {
    
 }
 
-//  Bloquear tarjetas
+//  Bloquear tarjetas hasta que empiece 
 function bloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     let tarjetasBloqueadas = document.getElementById(i).disabled = true
