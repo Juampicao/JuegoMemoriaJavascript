@@ -23,7 +23,6 @@ let segundoResultado = null;
 
 let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6,7,7,8,8]
 numeros = numeros.sort(() => { return Math.random() - 0.5 })
-console.log(numeros)
 
 // DOM
 tiempo = document.getElementById("tiempo")
@@ -57,7 +56,6 @@ function tiempoDeJuego() {
 function bloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     let tarjetasBloqueadas = document.getElementById(i).disabled = true
-    console.log(tarjetasBloqueadas)
  }
 }
 
@@ -94,8 +92,8 @@ function contarTarjetas(id) {
     // Contar Movimientos 
         movimientos++
         nuevosMovimientos.innerText = "Movimientos: " + movimientos
-        console.log(nuevosMovimientos.textContent)
-        movimientosDom.innerText = `Movimientos  \n   ${movimientos}`
+        // console.log(nuevosMovimientos.textContent)
+        movimientosDom.innerText = `Movimientos:     ${movimientos}`
     
         
             
@@ -105,8 +103,8 @@ function contarTarjetas(id) {
             tarjetasDestapadas = 0;
              // Aumentar Aciertos 
             aciertos++ 
-            aciertosDom.innerHTML = `Aciertos:  \n  ${aciertos}`
-            console.log(`Aciertos:  \n  ${aciertos}`)
+            aciertosDom.innerHTML = `Aciertos:  ${aciertos}`
+            // console.log(`Aciertos:  \n  ${aciertos}`)
             if (aciertos == 8) {
                alert(`Ganaste! Resultado: Movimientos ${movimientos} || Aciertos ${aciertos} || Tiempo:${resultadoFinalTiempo}`)
           } else if (timer === 0) {
