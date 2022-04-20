@@ -32,7 +32,12 @@ let modalTiempoTerminado = document.getElementById("modalTiempoTerminado") // Mo
 let resultadoJuego = document.getElementById("resultadoJuego") // Div Resultado Final .
 let pressConfirmModalJuegarDevuelta = document.getElementById("pressConfirmModalJuegarDevuelta") // Press ¡Si, Quiero una mas!
 
-
+function jugarDenuevo() {
+   pressConfirmModalJuegarDevuelta.addEventListener(`click`, (e) => {
+   e.preventDefault();
+   location.reload();
+  })
+}
 
 // Crear DIV DOM
 var nuevoH2 = document.createElement(`h2`)
@@ -84,8 +89,9 @@ function tiempoDeJuego() {
          timer--
          if (timer <= -1) {
            clearInterval(cronometro);
-           alert(`${inputNombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
-           location.reload();
+          //  alert(`${inputNombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
+            modalTiempoTerminado.classList.remove("hidden")
+            jugarDenuevo();
          }
         tiempo.innerHTML = "Tiempo: " + timer;
     },1000)
@@ -145,8 +151,9 @@ function contarTarjetas(id) {
             // console.log(`Aciertos:  \n  ${aciertos}`)
           if (aciertos == 8) {
             // alert(`${inputNombreJugador}, GANASTE. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
-            modalTiempoTerminado.classList.remove("hidden")
             clearInterval(cronometro);
+            modalTiempoTerminado.classList.remove("hidden")
+            jugarDenuevo();
           } 
 
         } else {
