@@ -1,5 +1,5 @@
 // Declaro variables iniciables
-let timer = 45; 
+let timer = 5; 
 let cronometro; 
 
 let tarjetasDestapadas = 0; 
@@ -12,22 +12,47 @@ let tarjeta2 = null;
 let primerResultado = null;
 let segundoResultado = null; 
 
- 
+let nombreJugador = "Amig@";
+console.log(nombreJugador)
+
+// DOM
+
+let tiempo = document.getElementById("tiempo")
+let movimientosDom = document.getElementById("movimientos")
+let aciertosDom = document.getElementById("aciertos")
+let resultadoFinalDom = document.getElementById("resultadoFinalDom")
+let modalDom = document.getElementById("modal")
+let pressListoModal = document.getElementById("pressListoModal")
+let inputNombreJugador = document.getElementById("nombreJugador");
+
+let pressToggleModal = document.getElementById("toggleBotton")
+let pressConfirmModal = document.getElementById("pressConfirmModal")
+let modalToggle = document.getElementById("popup-modal")
+
+
+// Crear DIV DOM
+var nuevosMovimientos = document.createElement(`h2`)
+  
+
+pressConfirmModal.addEventListener(`click`, (e) => {
+  modalToggle.classList.add(`hidden`)
+  e.preventDefault();
+})
+
+if (modalToggle.classList = `hidden`) {
+  console.log("esta hidden")
+} else {
+  console.log("no esta hidden")
+}
+
+function aparecerModalNombre() {
+  modalToggle.classList.remove(`hidden`)
+}
 
 // Numeros Aleatorios
 
 let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6,7,7,8,8]
 numeros = numeros.sort(() => { return Math.random() - 0.5 })
-
-// DOM
-tiempo = document.getElementById("tiempo")
-movimientosDom = document.getElementById("movimientos")
-aciertosDom = document.getElementById("aciertos")
-resultadoFinalDom = document.getElementById("resultadoFinalDom")
-
-// Crear DIV DOM
-var nuevosMovimientos = document.createElement(`h2`)
-
 
 // Cronometro
 function tiempoDeJuego() {
@@ -38,10 +63,10 @@ function tiempoDeJuego() {
          timer--
          if (timer <= -1) {
            clearInterval(cronometro);
-           alert(`Tiempo Acabado. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
+           alert(`${nombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
            location.reload();
          }
-        tiempo.innerHTML = "Tiempo de juego: " + timer;
+        tiempo.innerHTML = "Tiempo: " + timer;
     },1000)
     }, 3000);
    
@@ -100,7 +125,7 @@ function contarTarjetas(id) {
             aciertosDom.innerHTML = `Aciertos:  ${aciertos}`
             // console.log(`Aciertos:  \n  ${aciertos}`)
           if (aciertos == 8) {
-            alert(`Ganaste! Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
+            alert(`${nombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
           } else if (timer === 0) {
             alert("perdiste")
             }
