@@ -1,5 +1,5 @@
 // Declaro variables iniciables
-let timer = 5; 
+let timer = 15; 
 let cronometro; 
 
 let tarjetasDestapadas = 0; 
@@ -12,7 +12,7 @@ let tarjeta2 = null;
 let primerResultado = null;
 let segundoResultado = null; 
 
-let nombreJugador = null;
+let inputNombreJugador; 
 
 // DOM
 
@@ -20,53 +20,57 @@ let tiempo = document.getElementById("tiempo")
 let movimientosDom = document.getElementById("movimientos")
 let aciertosDom = document.getElementById("aciertos")
 let resultadoFinalDom = document.getElementById("resultadoFinalDom")
-let modalDom = document.getElementById("modal")
-let pressListoModal = document.getElementById("pressListoModal")
-let inputNombreJugador = document.getElementById("nombreJugador")
 
-let pressToggleModal = document.getElementById("toggleBotton")
-let pressConfirmModal = document.getElementById("pressConfirmModal")
-let modalToggle = document.getElementById("popup-modal")
+// Dom Modal Nombre
+let pressConfirmModal = document.getElementById("pressConfirmModal") // Boton Confirm Modal
+let modalNombre = document.getElementById("modalNombre") // Div Modal
+let pressCloseModal = document.getElementById("pressCloseModal") // Boton Close Modal
+let completarNombre = document.getElementById("completarNombre") // Input Text 
+
+// Dom Modal Tiempo Terminado 
+let modalTiempoTerminado = document.getElementById("modalTiempoTerminado") // Modal Tiempo Terminado Entero
+let resultadoJuego = document.getElementById("resultadoJuego") // Div Resultado Final .
+
+
 
 // Crear DIV DOM
 var nuevoH2 = document.createElement(`h2`)
   
-
-// Modal Nombre 
+// Press Confirm Modal
 pressConfirmModal.addEventListener(`click`, (e) => {
   e.preventDefault();
-  let inputNombreJugador = document.getElementById("nombreJugador").value 
-  
-  if (!inputNombreJugador.lenght) {
-       pressConfirmModal.disabled = true;
-       let completarNombre = document.getElementById("completarNombre")
-       completarNombre.classList.remove("hidden")
-       console.log("esta vacio")
-  }
-  else {
-           pressConfirmModal.disabled = false;
-           modalToggle.classList.add(`hidden`)
-           console.log("Esta lleno")
-           console.log("El inputNombreJugador es:" + inputNombreJugador)
-           inputNombreJugador.value  = nombreJugador 
-           console.log("El nombreJugador es:" + nombreJugador)
+  inputNombreJugador = document.getElementById("nombreJugador").value 
+    if (!inputNombreJugador.length) {
+           pressConfirmModal.disabled = false; 
+           completarNombre.classList.remove("hidden")
+    }
+    else {
+          modalNombre.classList.add(`hidden`)  
+          console.log(inputNombreJugador)
     }
 })
 
+// Press Close Modal
+pressCloseModal.addEventListener(`click`, (e) => {
+  e.preventDefault();
+    completarNombre.classList.remove("hidden")
+})
 
-if (modalToggle.classList = `hidden`) {
+
+
+if (modalNombre.classList = `hidden`) {
   console.log("esta hidden")
 } else {
   console.log("no esta hidden")
 }
 
+// Aparecer Modal Nombre on body.load. 
 function aparecerModalNombre() {
-  modalToggle.classList.remove(`hidden`)
+  modalNombre.classList.remove(`hidden`)
 }
 
 
 // Numeros Aleatorios
-
 let numeros = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6,7,7,8,8]
 numeros = numeros.sort(() => { return Math.random() - 0.5 })
 
@@ -79,7 +83,7 @@ function tiempoDeJuego() {
          timer--
          if (timer <= -1) {
            clearInterval(cronometro);
-           alert(`${nombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
+           alert(`${inputNombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
            location.reload();
          }
         tiempo.innerHTML = "Tiempo: " + timer;
@@ -88,14 +92,14 @@ function tiempoDeJuego() {
    
 }
 
-//  Bloquear tarjetas hasta que empiece 
+//  Bloquear tarjetas hasta que empiece el cronometro.
 function bloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     let tarjetasBloqueadas = document.getElementById(i).disabled = true
  }
 }
 
-// Desbloquear Tarjetas 
+// Desbloquear Tarjetas cuando empieza el cronometro. 
 function desbloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     let tarjetasBloqueadas = document.getElementById(i).disabled = false
@@ -138,10 +142,15 @@ function contarTarjetas(id) {
             aciertos++ 
             aciertosDom.innerHTML = `Aciertos:  ${aciertos}`
             // console.log(`Aciertos:  \n  ${aciertos}`)
-          if (aciertos == 8) {
-            alert(`${nombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
+          if (aciertos == 1) {
+            // alert(`${inputNombreJugador}, GANASTE. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
+            modalTiempoTerminado.classList.remove("hidden")
+            clearInterval(cronometro);
+
           } else if (timer === 0) {
-            alert("perdiste")
+
+            // alert(`${inputNombreJugador}, PERDISTE. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
+
             }
 
 
