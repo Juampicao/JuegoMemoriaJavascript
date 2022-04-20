@@ -16,19 +16,15 @@
 
 </head>
 
-<!-- Activar aparecerModalNombre() -->
 
 <body onload="bloquearTarjetas(),aparecerModalNombre()" class=" text-white  min-h-screen">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js">
     </script>
 
+    <!-- ----------------------------    Modal Nombre Inicio    -------------------------------------->
 
-    <!-- ----------------------------   Modal Nombre Inicio    -------------------------------------->
-
-    <!-- <div id="modalNombre" tabindex="-1"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full justify-center items-center"
-        aria-hidden="true">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
+    <div id="modalNombre" tabindex="-1">
+        <div class="absolute top- z-50 p-4 w-full  h-full ">
 
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 
@@ -45,89 +41,41 @@
                     </button>
                 </div>
 
-                <div class="p-6 pt-0 text-center  ">
+                <div class="px-6 pt-0 text-center  ">
                     <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <form action="submit">
-                        <div class="p-6 flex flex-col align-center text-center">
-                            <h3 class="mb-3 text-lg font-normal text-gray-500 dark:text-gray-400"> Bienvenido al Juego
+                        <div
+                            class="p-6 flex flex-col align-center text-center text-lg font-normal text-gray-500 dark:text-gray-400">
+                            <h3 class="mb-3 "> Bienvenido al Juego
                                 de la
-                                Memoria </h3>
-                            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Cual es tu nombre?
+                                Memoria </h3> <br>
+                            <h3 class="mb-5 ">¿Cual es tu nombre?
                             </h3>
                             <input id="nombreJugador" type="text"
                                 class="text-black text-center mx-auto my-auto font-medium rounded-lg h-8 p-3">
                             <p id="completarNombre" class="hidden p-2 rounded-lg text-black mt-2 "> Completa tu nombre
                             </p>
 
-                            <button id="pressConfirmModal" data-modal-toggle="popup-modal" type="button"
-                                class="mt-10 py-2 rounded-lg  bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800">
-                                Quiero jugar
+                            <button id="pressConfirmModal" type="button"
+                                class="mt-10 py-2 rounded-lg text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 ">
+                                ¡Si! Quiero jugar
                             </button>
+
                         </div>
                     </form>
-
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- ----------------------------  FIN  Modal Nombre Inicio    -------------------------------------->
-
-    <!-- ----------------------------   Modal Nombre Inicio    -------------------------------------->
-
-    <div id="modalNombre" tabindex="-1"
-        class="hidden absolute top-50 overflow-y-auto overflow-x-hidden  md:inset-0 h-modal md:h-full justify-center items-center"
-        aria-hidden="true">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-
-                <div class="flex justify-end p-2">
-                    <button type="button"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                        data-modal-toggle="popup-modal">
-                        <svg id="pressCloseModal" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="p-6 pt-0 text-center  ">
-                    <svg class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <form action="submit">
-                        <div class="p-6 flex flex-col align-center text-center">
-                            <h3 class="mb-3 text-lg font-normal text-gray-500 dark:text-gray-400"> Bienvenido al Juego
-                                de la
-                                Memoria </h3>
-                            <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Cual es tu nombre?
-                            </h3>
-                            <input id="nombreJugador" type="text"
-                                class="text-black text-center mx-auto my-auto font-medium rounded-lg h-8 p-3">
-                            <p id="completarNombre" class="hidden p-2 rounded-lg text-black mt-2 "> Completa tu nombre
-                            </p>
-
-                            <button id="pressConfirmModal" data-modal-toggle="popup-modal" type="button"
-                                class="mt-10 py-2 rounded-lg  bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800">
-                                Quiero jugar
-                            </button>
-                        </div>
-                    </form>
+                    <p class="text-sm py-4 flex justify-end botom-0 text-slate-400 ">by Juan Pablo Parada Cao</p>
 
                 </div>
             </div>
         </div>
     </div>
-    <!-- ----------------------------  FIN  Modal Nombre Inicio    -------------------------------------->
+    <!-- ----------------------------  Modal Nombre Inicio    -------------------------------------->
+
+
 
     <!-- ----------------------------  Modal Tiempo Terminado    -------------------------------------->
 
@@ -136,16 +84,40 @@
         aria-hidden="true">
         <div class="relative p-4 w-full max-w-md h-full md:h-auto">
 
-            <div id="resultadoJuego" class="relative bg-white rounded-lg shadow dark:bg-gray-700 text-black p-5">
+            <div id="resultadoJuego"
+                class=" relative bg-white rounded-lg shadow p-5 text-lg font-normal text-gray-500 ">
+                <div class="">
+                    <h1> Ganaste o Perdiste {nombreJugador} </h1>
+                    <h1> Movimientos: </h1>
+                    <h1> Acierto: </h1>
+                </div>
 
-                <h1> Ganaste: {nombreJugador} </h1>
-                <h1> Movimientos: </h1>
-                <h1> Acierto: </h1>
+                <div class="p-6 pt-0 text-center  ">
 
+                    <form action="submit">
+                        <div class="p-6 flex flex-col align-center text-center">
+
+                            <h3 class="mb-5">¿Quieres jugar
+                                devuelta? {Nombre del jugador}
+                            </h3>
+
+                            <p id="completarNombre" class="hidden p-2 rounded-lg text-black mt-2 "> Completa tu nombre
+                            </p>
+
+                            <button id="pressConfirmModalJuegarDevuelta" data-modal-toggle="popup-modal" type="button"
+                                class="mt-5 py-2 rounded-lg  text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800">
+                                ¡Si, quiero una mas!
+                            </button>
+
+                        </div>
+                    </form>
+
+                </div>
 
             </div>
         </div>
     </div>
+
 
 
     <!-- ----------------------------  Fin Modal Tiempo Terminado    -------------------------------------->
@@ -286,6 +258,7 @@
 
         </button>
     </div>
+    <p class="text-sm py-2 px-3 flex justify-end top-0 text-slate-500 ">by Juan Pablo Parada Cao</p>
 
     <script src="./main.js"> </script>
 

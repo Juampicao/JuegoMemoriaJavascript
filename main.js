@@ -1,5 +1,5 @@
 // Declaro variables iniciables
-let timer = 15; 
+let timer = 45; 
 let cronometro; 
 
 let tarjetasDestapadas = 0; 
@@ -30,6 +30,7 @@ let completarNombre = document.getElementById("completarNombre") // Input Text
 // Dom Modal Tiempo Terminado 
 let modalTiempoTerminado = document.getElementById("modalTiempoTerminado") // Modal Tiempo Terminado Entero
 let resultadoJuego = document.getElementById("resultadoJuego") // Div Resultado Final .
+let pressConfirmModalJuegarDevuelta = document.getElementById("pressConfirmModalJuegarDevuelta") // Press ¡Si, Quiero una mas!
 
 
 
@@ -142,17 +143,11 @@ function contarTarjetas(id) {
             aciertos++ 
             aciertosDom.innerHTML = `Aciertos:  ${aciertos}`
             // console.log(`Aciertos:  \n  ${aciertos}`)
-          if (aciertos == 1) {
+          if (aciertos == 8) {
             // alert(`${inputNombreJugador}, GANASTE. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
             modalTiempoTerminado.classList.remove("hidden")
             clearInterval(cronometro);
-
-          } else if (timer === 0) {
-
-            // alert(`${inputNombreJugador}, PERDISTE. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
-
-            }
-
+          } 
 
         } else {
             // Mostrar 1 segundos la carta, pero desaparezca
