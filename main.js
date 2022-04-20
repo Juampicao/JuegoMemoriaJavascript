@@ -29,18 +29,30 @@ let pressConfirmModal = document.getElementById("pressConfirmModal")
 let modalToggle = document.getElementById("popup-modal")
 
 // Crear DIV DOM
-var nuevosMovimientos = document.createElement(`h2`)
+var nuevoH2 = document.createElement(`h2`)
   
 
 // Modal Nombre 
 pressConfirmModal.addEventListener(`click`, (e) => {
   e.preventDefault();
-  modalToggle.classList.add(`hidden`)
   let inputNombreJugador = document.getElementById("nombreJugador").value 
-  console.log("El inputNombreJugador es:" + inputNombreJugador)
-  inputNombreJugador.value  = nombreJugador 
-  console.log("El nombreJugador es:" + nombreJugador)
+  
+  if (!inputNombreJugador.lenght) {
+       pressConfirmModal.disabled = true;
+       let completarNombre = document.getElementById("completarNombre")
+       completarNombre.classList.remove("hidden")
+       console.log("esta vacio")
+  }
+  else {
+           pressConfirmModal.disabled = false;
+           modalToggle.classList.add(`hidden`)
+           console.log("Esta lleno")
+           console.log("El inputNombreJugador es:" + inputNombreJugador)
+           inputNombreJugador.value  = nombreJugador 
+           console.log("El nombreJugador es:" + nombreJugador)
+    }
 })
+
 
 if (modalToggle.classList = `hidden`) {
   console.log("esta hidden")
@@ -51,8 +63,6 @@ if (modalToggle.classList = `hidden`) {
 function aparecerModalNombre() {
   modalToggle.classList.remove(`hidden`)
 }
-
-// Nombre Input == Nombre Variable  prueba
 
 
 // Numeros Aleatorios
@@ -114,7 +124,7 @@ function contarTarjetas(id) {
 
     // Contar Movimientos 
         movimientos++
-        nuevosMovimientos.innerText = "Movimientos: " + movimientos
+        nuevoH2.innerText = "Movimientos: " + movimientos
         // console.log(nuevosMovimientos.textContent)
         movimientosDom.innerText = `Movimientos:     ${movimientos}`
     
