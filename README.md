@@ -2,7 +2,8 @@
 Juego Memoria con Javascript y TailwindCss
 
 Falta: 
-- Empezar Cronometro al dar click a cualquier boton
-- Efectos CSS botones hover width++ y carga de pagina
-- Tiempo final: tiempoFinal - timerRestante
-
+ - LocalStorage para funcion jugar denuevo % == Nombre. 
+ - Llamar variables de js en html (desde html) 
+ - Responsive (celu como estan los botones?)
+ - Funcion Bloquear Body if modal is open. 
+ - Limpiar codigo innecesario
