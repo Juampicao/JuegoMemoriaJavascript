@@ -12,8 +12,7 @@ let tarjeta2 = null;
 let primerResultado = null;
 let segundoResultado = null; 
 
-let nombreJugador = "Amig@";
-console.log(nombreJugador)
+let nombreJugador = null;
 
 // DOM
 
@@ -23,20 +22,24 @@ let aciertosDom = document.getElementById("aciertos")
 let resultadoFinalDom = document.getElementById("resultadoFinalDom")
 let modalDom = document.getElementById("modal")
 let pressListoModal = document.getElementById("pressListoModal")
-let inputNombreJugador = document.getElementById("nombreJugador");
+let inputNombreJugador = document.getElementById("nombreJugador")
 
 let pressToggleModal = document.getElementById("toggleBotton")
 let pressConfirmModal = document.getElementById("pressConfirmModal")
 let modalToggle = document.getElementById("popup-modal")
 
-
 // Crear DIV DOM
 var nuevosMovimientos = document.createElement(`h2`)
   
 
+// Modal Nombre 
 pressConfirmModal.addEventListener(`click`, (e) => {
-  modalToggle.classList.add(`hidden`)
   e.preventDefault();
+  modalToggle.classList.add(`hidden`)
+  let inputNombreJugador = document.getElementById("nombreJugador").value 
+  console.log("El inputNombreJugador es:" + inputNombreJugador)
+  inputNombreJugador.value  = nombreJugador 
+  console.log("El nombreJugador es:" + nombreJugador)
 })
 
 if (modalToggle.classList = `hidden`) {
@@ -48,6 +51,9 @@ if (modalToggle.classList = `hidden`) {
 function aparecerModalNombre() {
   modalToggle.classList.remove(`hidden`)
 }
+
+// Nombre Input == Nombre Variable  prueba
+
 
 // Numeros Aleatorios
 
@@ -85,8 +91,6 @@ function desbloquearTarjetas() {
     let tarjetasBloqueadas = document.getElementById(i).disabled = false
  }
 }
-
-
 
 // Funcion PRINCIPAL 
  
