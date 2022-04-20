@@ -1,5 +1,5 @@
 // Declaro variables iniciables
-let timer = 45; 
+let timer = 5; 
 let cronometro; 
 
 let tarjetasDestapadas = 0; 
@@ -31,6 +31,11 @@ let completarNombre = document.getElementById("completarNombre") // Input Text
 let modalTiempoTerminado = document.getElementById("modalTiempoTerminado") // Modal Tiempo Terminado Entero
 let resultadoJuego = document.getElementById("resultadoJuego") // Div Resultado Final .
 let pressConfirmModalJuegarDevuelta = document.getElementById("pressConfirmModalJuegarDevuelta") // Press ¡Si, Quiero una mas!
+
+// Dom modal Ganaste 
+
+
+// Dom modal Perdiste 
 
 function jugarDenuevo() {
    pressConfirmModalJuegarDevuelta.addEventListener(`click`, (e) => {
@@ -90,7 +95,14 @@ function tiempoDeJuego() {
          if (timer <= -1) {
            clearInterval(cronometro);
           //  alert(`${inputNombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
-            modalTiempoTerminado.classList.remove("hidden")
+           modalTiempoTerminado.classList.remove("hidden")
+          
+           let perdiste = document.createElement(`h2`).innerText = "¡Perdiste! " + "\n" + inputNombreJugador 
+           let cantidadMovimientos = document.createElement(`h2`).innerText = " || Movimientos:" + movimientos 
+           let cantidadAciertos = document.createElement(`h2`).innerText = " || Aciertos:" + aciertos
+           
+           resultadoJuego.append(perdiste,cantidadMovimientos,cantidadAciertos) // Agrego el texto al DOM
+            
             jugarDenuevo();
          }
         tiempo.innerHTML = "Tiempo: " + timer;
@@ -98,7 +110,7 @@ function tiempoDeJuego() {
     }, 3000);
    
 }
-
+console.log(nuevoH2.innerText = "hola")
 //  Bloquear tarjetas hasta que empiece el cronometro.
 function bloquearTarjetas() {
   for (i = 0; i < 15; i++) {
@@ -153,6 +165,15 @@ function contarTarjetas(id) {
             // alert(`${inputNombreJugador}, GANASTE. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
             clearInterval(cronometro);
             modalTiempoTerminado.classList.remove("hidden")
+             
+          
+           let perdiste = document.createElement(`h2`).innerText = "¡Ganaste! " + "\n" + inputNombreJugador 
+           let cantidadMovimientos = document.createElement(`h2`).innerText = " || Movimientos:" + movimientos 
+           let cantidadAciertos = document.createElement(`h2`).innerText = " || Aciertos:" + aciertos
+           
+           resultadoJuego.append(perdiste,cantidadMovimientos,cantidadAciertos) // Agrego el texto al DOM
+            
+            jugarDenuevo();
             jugarDenuevo();
           } 
 
