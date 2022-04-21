@@ -24,7 +24,7 @@
     <!-- ----------------------------    Modal Nombre Inicio    -------------------------------------->
 
     <div id="modalNombre" tabindex="-1">
-        <div class="absolute top- z-50 p-4 w-full  h-full ">
+        <div class=" absolute top- z-50 p-4 w-full  h-full ">
 
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
 
@@ -50,13 +50,13 @@
                     <form action="submit">
                         <div
                             class="p-6 flex flex-col align-center text-center text-lg font-normal text-gray-500 dark:text-gray-400">
-                            <h3 class="mb-3 "> Bienvenido al Juego
-                                de la
-                                Memoria </h3> <br>
+                            <h3 class="mb-3 ">
+                                Bienvenido al Juego de la Memoria </h3> <br>
                             <h3 class="mb-5 ">¿Cual es tu nombre?
                             </h3>
                             <input id="nombreJugador" type="text"
                                 class="text-black text-center mx-auto my-auto font-medium rounded-lg h-8 p-3">
+                            <!-- Validar formulario -->
                             <p id="completarNombre" class="hidden p-2 rounded-lg text-black mt-2 "> Completa tu nombre
                             </p>
 
@@ -75,20 +75,17 @@
     </div>
     <!-- ----------------------------  Modal Nombre Inicio    -------------------------------------->
 
+    <!-- ----------------------------   Modal Tiempo Terminado    -------------------------------------->
 
 
-    <!-- ----------------------------  Modal Tiempo Terminado     -------------------------------------->
 
     <div id="modalTiempoTerminado" tabindex="-1"
-        class=" hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full justify-center items-center"
-        aria-hidden="true">
-        <div class="relative p-4 w-full max-w-md h-full md:h-auto">
-
-            <div class=" relative bg-white rounded-lg shadow p-5 text-lg font-normal text-gray-500 ">
+        class=" hidden absolute  z-50 p-4  h-full max-w-full overflow-x-hidden">
+        <div class="relative p-4 h-full ">
+            <div
+                class="relative bg-white rounded-lg shadow p-5 text-lg font-normal text-gray-500 justify-center items-center ">
                 <div id="resultadoJuego" class=" flex flex-col">
-                    <!-- <h1> Ganaste: {nombreJugador} </h1>
-                    <h1> Movimientos: </h1>
-                    <h1> Acierto: </h1> -->
+                    <h1 class="text-center uppercase ">Tiempo terminado</h1> <br>
                 </div>
 
                 <div class="p-6 pt-0 text-center  ">
@@ -100,7 +97,8 @@
                                 devuelta?
                             </h3>
 
-                            <p id="completarNombre" class="hidden p-2 rounded-lg text-black mt-2 "> Completa tu nombre
+                            <p id="completarNombre" class="hidden p-2 rounded-lg text-black mt-2 "> Completa tu
+                                nombre
                             </p>
 
                             <button id="pressConfirmModalJuegarDevuelta" data-modal-toggle="popup-modal" type="button"
@@ -117,9 +115,11 @@
         </div>
     </div>
 
+    <!-- ----------------------------   Modal Tiempo Terminado    -------------------------------------->
 
 
-    <!-- ----------------------------  Fin Modal Tiempo Terminado    -------------------------------------->
+
+
     <!-- ----------------------------    TIMER   -------------------------------------->
 
     <div class="text-center">
@@ -163,10 +163,10 @@
     </ul>
 
 
-    <!-- FIN PRUEBA  -->
     <!-- {/*---------------------------------------------- Estadisticas ----------------------------------------- */} -->
-    <div class="py-5 md:my-10 px-10 sm:px-32 md:px-62">
-        <div class="pt-16 flex justify-evenly space-x-8 uppercase text-sm md:text-2xl  ">
+
+    <div class="pt-16">
+        <div class="flex justify-evenly uppercase text-sm md:text-2xl  ">
             <h2 id="movimientos" class="ml2"> Movimientos: 0 </h2>
             <h2 id='tiempo' class="ml2"> Tiempo: 45 </h2>
             <h2 id="aciertos" class="ml2"> Aciertos: 0 </h2>
@@ -176,7 +176,7 @@
     <!-- {/*---------------------------------------------- Estadisticas ----------------------------------------- */} -->
     <!-- ----------------------------    JUEGO  -------------------------------------->
 
-    <div id="botones"
+    <main id="botones"
         class="grid grid-cols-4 my-8  mx-auto gap-x-5 lg:gap-x-10 gap-y-5 lg:gap-y-10 px-5 sm:px-16 md:px-62 lg:px-80 ">
         <button id="0" onclick="contarTarjetas(0)"
             class='border rounded-xl p-5 sm:p-3 md:p-5 text-sm text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
@@ -256,8 +256,11 @@
 
 
         </button>
-    </div>
-    <p class="text-sm py-2 px-3 flex justify-end top-0 text-slate-500 ">by Juan Pablo Parada Cao</p>
+    </main>
+    <footer>
+        <h1 id="aprietaComenzar" class="text-center text-white text-md"> Aprieta Comenzar para jugar </h1>
+        <p class="text-sm py-2 px-3 flex justify-end top-0 text-slate-500 ">by Juan Pablo Parada Cao</p>
+    </footer>
 
     <script src="./main.js"> </script>
 
