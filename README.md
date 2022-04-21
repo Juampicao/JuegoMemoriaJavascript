@@ -1,9 +1,9 @@
 # JuegoMemoriaJavascript
 Juego Memoria con Javascript y TailwindCss
 
+Tailwind con CDN.
+
 Falta: 
- - LocalStorage para funcion jugar denuevo % == Nombre. 
- - Llamar variables de js en html (desde html) 
- - Responsive (celu como estan los botones?)
- - Funcion Bloquear Body if modal is open. 
- - Limpiar codigo innecesario
+  - Funcion Bloquear Body + opacity = "0.3" if modal is open. 
+  - ModalTiempoTerminado tira snap-x, bloquear.
+  - Limpiar codigo innecesario.
