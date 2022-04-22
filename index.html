@@ -118,149 +118,152 @@
     <!-- ----------------------------   Modal Tiempo Terminado    -------------------------------------->
 
 
+    <!-- Div contenedor de TODO, menos el modal. Poner default opacity= "0.3" -->
+    <div id="todoOpacity" style="opacity: 0.3;">
 
 
-    <!-- ----------------------------    TIMER   -------------------------------------->
+        <!-- ----------------------------    TIMER   -------------------------------------->
 
-    <div class="text-center">
+        <div class="text-center">
 
-        <div class="">
-            <h1 class='uppercase text-lg md:text-4xl mt-5'> Juego memoria </h1>
+            <div class="">
+                <h1 class='uppercase text-lg md:text-4xl mt-5'> Juego memoria </h1>
 
-            <input type="submit" value="comenzar" onClick="tiempoDeJuego()" id="botonComenzar"
-                class='bg-white text-black uppercase text-sm p-3 mt-3 md:text-2xl md:mt-10 rounded-xl md:p-5 cursor-pointer ' />
-            <h1 class="ml4">
-                <span class="letters letters-1">Ready</span>
-                <span class="letters letters-2">Set</span>
-                <span class="letters letters-3">Go!</span>
-            </h1>
+                <input type="submit" value="comenzar" onClick="tiempoDeJuego()" id="botonComenzar"
+                    class='bg-white text-black uppercase text-sm p-3 mt-3 md:text-2xl md:mt-10 rounded-xl md:p-5 cursor-pointer ' />
+                <h1 class="ml4">
+                    <span class="letters letters-1">Ready</span>
+                    <span class="letters letters-2">Set</span>
+                    <span class="letters letters-3">Go!</span>
+                </h1>
 
+            </div>
         </div>
-    </div>
-    <!-- PRUEBA  -->
-    <ul>
-        <li>
-            <a href="#">
-                <i class="fab fa-edge"></i>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fab fa-firefox"></i>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fab fa-chrome"></i>
-            </a>
+        <!-- PRUEBA  -->
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="fab fa-edge"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fab fa-firefox"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fab fa-chrome"></i>
+                </a>
 
-        </li>
-        <li>
-            <a href="#">
-                <i class="fab fa-opera"></i>
-            </a>
-        </li>
-    </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fab fa-opera"></i>
+                </a>
+            </li>
+        </ul>
 
 
-    <!-- {/*---------------------------------------------- Estadisticas ----------------------------------------- */} -->
+        <!-- {/*---------------------------------------------- Estadisticas ----------------------------------------- */} -->
 
-    <div class="pt-16 md:pt-24">
-        <div class="flex justify-evenly uppercase text-sm md:text-2xl  ">
-            <h2 id="movimientos" class="ml2"> Movimientos: 0 </h2>
-            <h2 id='tiempo' class="ml2"> Tiempo: 45 </h2>
-            <h2 id="aciertos" class="ml2"> Aciertos: 0 </h2>
+        <div class="pt-16 md:pt-24">
+            <div class="flex justify-evenly uppercase text-sm md:text-2xl  ">
+                <h2 id="movimientos" class="ml2"> Movimientos: 0 </h2>
+                <h2 id='tiempo' class="ml2"> Tiempo: 45 </h2>
+                <h2 id="aciertos" class="ml2"> Aciertos: 0 </h2>
 
+            </div>
         </div>
+        <!-- {/*---------------------------------------------- Estadisticas ----------------------------------------- */} -->
+        <!-- ----------------------------    JUEGO  -------------------------------------->
+
+        <main id="botones"
+            class="grid grid-cols-4 my-8  mx-auto gap-x-5 lg:gap-x-10 gap-y-5 lg:gap-y-10 px-5 sm:px-16 md:px-62 lg:px-80 ">
+            <button id="0" onclick="contarTarjetas(0)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-sm text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+            </button>
+
+            <button id="1" onclick="contarTarjetas(1)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+            </button>
+            <button id="2" onclick="contarTarjetas(2)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="3" onclick="contarTarjetas(3)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="4" onclick="contarTarjetas(4)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="5" onclick="contarTarjetas(5)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="6" onclick="contarTarjetas(6)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="7" onclick="contarTarjetas(7)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="8" onclick="contarTarjetas(8)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="9" onclick="contarTarjetas(9)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="10" onclick="contarTarjetas(10)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="11" onclick="contarTarjetas(11)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="12" onclick="contarTarjetas(12)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="13" onclick="contarTarjetas(13)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="14" onclick="contarTarjetas(14)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+            <button id="15" onclick="contarTarjetas(15)"
+                class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
+
+
+            </button>
+        </main>
+        <footer>
+            <h1 id="aprietaComenzar" class="text-center text-white text-md"> Aprieta Comenzar para jugar </h1>
+            <p class="text-sm py-2 px-3 flex justify-end top-0 text-slate-500 ">by Juan Pablo Parada Cao</p>
+        </footer>
     </div>
-    <!-- {/*---------------------------------------------- Estadisticas ----------------------------------------- */} -->
-    <!-- ----------------------------    JUEGO  -------------------------------------->
-
-    <main id="botones"
-        class="grid grid-cols-4 my-8  mx-auto gap-x-5 lg:gap-x-10 gap-y-5 lg:gap-y-10 px-5 sm:px-16 md:px-62 lg:px-80 ">
-        <button id="0" onclick="contarTarjetas(0)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-sm text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-        </button>
-
-        <button id="1" onclick="contarTarjetas(1)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-        </button>
-        <button id="2" onclick="contarTarjetas(2)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="3" onclick="contarTarjetas(3)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="4" onclick="contarTarjetas(4)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="5" onclick="contarTarjetas(5)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="6" onclick="contarTarjetas(6)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="7" onclick="contarTarjetas(7)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="8" onclick="contarTarjetas(8)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="9" onclick="contarTarjetas(9)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="10" onclick="contarTarjetas(10)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="11" onclick="contarTarjetas(11)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="12" onclick="contarTarjetas(12)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="13" onclick="contarTarjetas(13)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="14" onclick="contarTarjetas(14)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-        <button id="15" onclick="contarTarjetas(15)"
-            class='border rounded-xl p-5 sm:p-3 md:p-5 text-xl lg:text-4xl font-black  cursor-pointer h-16 md:h-32 lg:h-36 lg:w-36 ov-btn-slide-right'>
-
-
-        </button>
-    </main>
-    <footer>
-        <h1 id="aprietaComenzar" class="text-center text-white text-md"> Aprieta Comenzar para jugar </h1>
-        <p class="text-sm py-2 px-3 flex justify-end top-0 text-slate-500 ">by Juan Pablo Parada Cao</p>
-    </footer>
 
     <script src="./main.js"> </script>
 
