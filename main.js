@@ -47,10 +47,21 @@ function aparecerModalNombre() {
   modalNombre.classList.remove(`hidden`);
 }
 
+// Toogle hover class
+function toggleHover() {
+  for (i = 0; i < 15; i++) {
+    tarjetasBloqueadas = document.getElementById(i);
+    tarjetasBloqueadas.classList.toggle(`ov-btn-slide-right`);
+    tarjetasBloqueadas.classList.toggle(`bg-white`);
+  }
+}
+
 //  Bloquear tarjetas hasta que empiece el cronometro.
 function bloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     tarjetasBloqueadas = document.getElementById(i).disabled = true;
+    toggleHover();
+    console.log("esta bloqueado");
   }
 }
 
@@ -58,6 +69,8 @@ function bloquearTarjetas() {
 function desbloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     tarjetasBloqueadas = document.getElementById(i).disabled = false;
+    toggleHover();
+    console.log("esta desbloqueado");
   }
 }
 
@@ -137,11 +150,13 @@ function contarTarjetas(id) {
     tarjeta2.disabled = true;
 
     // Contar Movimientos
-    movimientos++;
-    let nuevoH2 = document.createElement(`h2`);
-    nuevoH2.innerText = "Movimientos: " + movimientos;
-    // console.log(nuevosMovimientos.textContent)
-    movimientosDom.innerText = `Movimientos:     ${movimientos}`;
+    if (tarjetasBloqueadas.disabled === true) {
+      movimientos++;
+      let nuevoH2 = document.createElement(`h2`);
+      nuevoH2.innerText = "Movimientos: " + movimientos;
+      // console.log(nuevosMovimientos.textContent)
+      movimientosDom.innerText = `Movimientos:     ${movimientos}`;
+    }
 
     // Volver a 0 tarjetas destapadas si acierta
 
@@ -175,7 +190,7 @@ function contarTarjetas(id) {
         tarjeta2.innerHTML = ``;
         tarjeta2.disabled = false;
         tarjetasDestapadas = 0;
-      }, 1000);
+      }, 500);
     }
   }
 }
