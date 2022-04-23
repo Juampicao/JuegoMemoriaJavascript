@@ -103,6 +103,8 @@ pressCloseModal.addEventListener(`click`, (e) => {
 
 // Cronometro
 function tiempoDeJuego() {
+  let aprietaComenzar = document.getElementById("aprietaComenzar");
+  aprietaComenzar.classList.add(`hidden`);
   efectoReady();
   setTimeout(desbloquearTarjetas, 3000);
   setTimeout(() => {
@@ -150,13 +152,12 @@ function contarTarjetas(id) {
     tarjeta2.disabled = true;
 
     // Contar Movimientos
-    if (tarjetasBloqueadas.disabled === true) {
-      movimientos++;
-      let nuevoH2 = document.createElement(`h2`);
-      nuevoH2.innerText = "Movimientos: " + movimientos;
-      // console.log(nuevosMovimientos.textContent)
-      movimientosDom.innerText = `Movimientos:     ${movimientos}`;
-    }
+
+    movimientos++;
+    let nuevoH2 = document.createElement(`h2`);
+    nuevoH2.innerText = "Movimientos: " + movimientos;
+    // console.log(nuevosMovimientos.textContent)
+    movimientosDom.innerText = `Movimientos:     ${movimientos}`;
 
     // Volver a 0 tarjetas destapadas si acierta
 

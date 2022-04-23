@@ -14,6 +14,7 @@ button:hover {
   transition: all 0.3s ease-out;
 } 
 
+
 /* Boton Comenzar  */
 #botonComenzar:hover {
  background-color: black;
@@ -97,7 +98,7 @@ button:hover {
 
 /* // Fadein */
 
- body  {
+ body {
  animation: fadein 2s; 
 }
 @keyframes fadein {
