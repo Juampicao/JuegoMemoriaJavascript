@@ -1,5 +1,5 @@
 // Declaro variables iniciables
-let timer = 45;
+let timer = 2;
 let cronometro;
 
 let tarjetasDestapadas = 0;
@@ -92,6 +92,7 @@ pressConfirmModal.addEventListener(`click`, (e) => {
     modalNombre.classList.add(`hidden`);
     console.log(inputNombreJugador);
     todoOpacity.style.opacity = "1";
+    tiempoDeJuego();
   }
 });
 
@@ -103,8 +104,6 @@ pressCloseModal.addEventListener(`click`, (e) => {
 
 // Cronometro
 function tiempoDeJuego() {
-  let aprietaComenzar = document.getElementById("aprietaComenzar");
-  aprietaComenzar.classList.add(`hidden`);
   efectoReady();
   setTimeout(desbloquearTarjetas, 3000);
   setTimeout(() => {
@@ -115,11 +114,11 @@ function tiempoDeJuego() {
         //  alert(`${inputNombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
         modalTiempoTerminado.classList.remove("hidden");
 
-        let perdiste = (document.createElement(`h2`).innerText =
+        let perdiste = (document.createElement(`li`).innerText =
           "¡Perdiste! " + inputNombreJugador);
-        let cantidadMovimientos = (document.createElement(`h2`).innerText =
+        let cantidadMovimientos = (document.createElement(`li`).innerText =
           "\n  || Movimientos:" + movimientos);
-        let cantidadAciertos = (document.createElement(`h2`).innerText =
+        let cantidadAciertos = (document.createElement(`li`).innerText =
           " || Aciertos:" + aciertos);
 
         resultadoJuego.append(perdiste, cantidadMovimientos, cantidadAciertos); // Agrego el texto al DOM

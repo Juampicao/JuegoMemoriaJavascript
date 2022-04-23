@@ -24,9 +24,9 @@
     <!-- ----------------------------    Modal Nombre Inicio    -------------------------------------->
 
     <div id="modalNombre" tabindex="-1">
-        <div class=" absolute top- z-50 p-4 w-full  h-full ">
+        <div class="flex  absolute  z-50 p-5 md:p-10 lg:px-48 lg:py-18 w-full  ">
 
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="relative bg-white w-full rounded-lg shadow dark:bg-gray-700">
 
                 <div class="flex justify-end p-2">
                     <button type="button"
@@ -48,11 +48,20 @@
                             d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <form action="submit">
-                        <div
-                            class="p-6 flex flex-col align-center text-center text-lg font-normal text-gray-500 dark:text-gray-400">
-                            <h3 class="mb-3 ">
-                                Bienvenido al Juego de la Memoria </h3> <br>
-                            <h3 class="mb-5 ">¿Cual es tu nombre?
+                        <div class="p-6 flex flex-col align-center text-center text-lg font-normal text-gray-800">
+                            <h3 class="mb-1 "> Bienvenido al Juego de la Memoria </h3> <br>
+
+                            <h4 class="font-bold text-black mb-4">Reglas</h4>
+                            <div class="flex mx-auto">
+                                <ul class=" space-y-1 list-disc text-left	">
+                                    <li> <span class="text-black font-bold">Objetivo: </span> Encontrar las parejas de
+                                        numeros.</li>
+                                    <li> <span class="text-black font-bold">Tiempo de juego: </span> 30 segundos.</li>
+                                    <li> <span class="text-black font-bold"> Aciertos para ganar: </span> 8</li>
+                                </ul>
+                            </div>
+
+                            <h3 class="mt-5 mb-3 text-gray-800">¿Cual es tu nombre?
                             </h3>
                             <input id="nombreJugador" type="text"
                                 class="text-black text-center mx-auto my-auto font-medium rounded-lg h-8 p-3">
@@ -88,6 +97,7 @@
                     <h1 class="text-center uppercase ">Tiempo terminado</h1> <br>
                 </div>
 
+
                 <div class="p-6 pt-0 text-center  ">
 
                     <form action="submit">
@@ -96,10 +106,6 @@
                             <h3 class="mb-5">¿Quieres jugar
                                 devuelta?
                             </h3>
-
-                            <p id="completarNombre" class="hidden p-2 rounded-lg text-black mt-2 "> Completa tu
-                                nombre
-                            </p>
 
                             <button id="pressConfirmModalJuegarDevuelta" data-modal-toggle="popup-modal" type="button"
                                 class="mt-5 py-2 rounded-lg  text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800">
@@ -129,14 +135,8 @@
             <div class="">
                 <h1 class='uppercase text-lg md:text-4xl mt-5'> Juego memoria </h1>
 
-                <h3 id="aprietaComenzar" class="mt-2 md:mt-4 text-center text-slate-300  text-sm md:text-lg"> Aprieta
-                    Comenzar para
-                    jugar </h3>
 
-                <input type="submit" value="comenzar" onClick="tiempoDeJuego()" id="botonComenzar"
-                    class='bg-white text-black uppercase text-sm p-3 mt-3 md:text-2xl md:mt-8 rounded-xl md:p-5 cursor-pointer ' />
-
-                <h1 class="ml4">
+                <h1 class="ml4 mb-10">
                     <span class="letters letters-1">Ready</span>
                     <span class="letters letters-2">Set</span>
                     <span class="letters letters-3">Go!</span>
