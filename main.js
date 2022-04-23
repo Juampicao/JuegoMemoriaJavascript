@@ -1,5 +1,5 @@
 // Declaro variables iniciables
-let timer = 2;
+let timer = 30;
 let cronometro;
 
 let tarjetasDestapadas = 0;
