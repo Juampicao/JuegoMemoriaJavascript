@@ -109,9 +109,9 @@ function tiempoDeJuego() {
       timer--;
       if (timer <= -1) {
         clearInterval(cronometro);
-        //  alert(`${inputNombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
         modalTiempoTerminado.classList.remove("hidden");
         todoOpacity.style.opacity = "0.3";
+        bloquearTarjetas();
 
         let perdiste = (document.createElement(`li`).innerText =
           "¡Perdiste! " + inputNombreJugador);
@@ -166,10 +166,10 @@ function contarTarjetas(id) {
       aciertosDom.innerHTML = `Aciertos:  ${aciertos}`;
       // console.log(`Aciertos:  \n  ${aciertos}`)
       if (aciertos == 8) {
-        // alert(`${inputNombreJugador}, GANASTE. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
         clearInterval(cronometro);
         modalTiempoTerminado.classList.remove("hidden");
         todoOpacity.style.opacity = "0.3";
+        bloquearTarjetas();
 
         let perdiste = (document.createElement(`h2`).innerText =
           "¡Ganaste! " + "\n" + inputNombreJugador);
