@@ -61,7 +61,6 @@ function bloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     tarjetasBloqueadas = document.getElementById(i).disabled = true;
     toggleHover();
-    console.log("esta bloqueado");
   }
 }
 
@@ -70,7 +69,6 @@ function desbloquearTarjetas() {
   for (i = 0; i < 15; i++) {
     tarjetasBloqueadas = document.getElementById(i).disabled = false;
     toggleHover();
-    console.log("esta desbloqueado");
   }
 }
 
@@ -113,6 +111,7 @@ function tiempoDeJuego() {
         clearInterval(cronometro);
         //  alert(`${inputNombreJugador}, Perdiste. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
         modalTiempoTerminado.classList.remove("hidden");
+        todoOpacity.style.opacity = "0.3";
 
         let perdiste = (document.createElement(`li`).innerText =
           "¡Perdiste! " + inputNombreJugador);
@@ -170,6 +169,7 @@ function contarTarjetas(id) {
         // alert(`${inputNombreJugador}, GANASTE. Resultado: Movimientos ${movimientos} || Aciertos ${aciertos}`)
         clearInterval(cronometro);
         modalTiempoTerminado.classList.remove("hidden");
+        todoOpacity.style.opacity = "0.3";
 
         let perdiste = (document.createElement(`h2`).innerText =
           "¡Ganaste! " + "\n" + inputNombreJugador);
